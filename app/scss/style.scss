@@ -3,6 +3,160 @@
 @import 'reset';
 @import 'global';
 
+.header {}
 
+.container {}
+
+.menu {
+
+  &__list {}
+
+  &__item {}
+
+  &__link {}
+
+  &__info {}
+
+  &__btn {}
+
+  &__phone {}
+}
+
+.logo {
+
+  &__img {}
+}
+
+.main {}
+
+.section {}
+
+.top {
+
+  &__inner {}
+
+  &__title {}
+
+  &__img {}
+
+  &__text {}
+}
+
+.social {
+
+  &__item {}
+
+  &__link {}
+}
+
+.scroll-btn {}
+
+.about {
+
+  &__title {}
+
+  &__inner {}
+
+  &__info {}
+
+  &__text {}
+
+  &__slider {}
+
+  &__item-text {}
+
+  &__list {}
+
+  &__item {}
+
+  &__img {}
+}
+
+.title {}
+
+.benefits {
+
+  &__title {}
+
+  &__list {}
+
+  &__item {}
+
+  &__num {}
+
+  &__img {}
+
+  &__box {}
+
+  &__box-title {}
+
+  &__descr {}
+}
+
+.characteristics {
+
+  &__title {}
+
+  &__inner {}
+
+  &__item {}
+
+  &__box {}
+
+  &__text {}
+
+  &__img {}
+}
+
+.questions {
+
+  &__title {}
+
+  &__list {}
+
+  &__item {}
+
+  &__item-title {}
+
+  &__text {}
+}
+
+.contacts {
+
+  &__title {}
+
+  &__inner {}
+
+  &__list {}
+
+  &__item {}
+
+  &__name {}
+
+  &__links {}
+
+  &__links-item {}
+
+  &__link {}
+
+  &__box {}
+
+  &__text {}
+
+  &__form {}
+
+  &__input {}
+
+  &__textarea {}
+
+  &__btn {}
+
+  &__social {}
+}
+
+.footer {
+
+  &__copy {}
+}
 
 @import 'media';
