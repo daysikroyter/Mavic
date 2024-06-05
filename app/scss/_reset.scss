@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -33,6 +34,7 @@ ol {
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
   color: inherit;
   outline: transparent;

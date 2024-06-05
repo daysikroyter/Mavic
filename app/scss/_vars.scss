@@ -1,0 +1,45 @@
+$accent: #1C1C1C;
+
+%sf-400 {
+  font-family: 'SFProDisplay-Regular';
+  font-weight: 400;
+}
+
+%sf-600 {
+  font-family: 'SFProDisplay-Semibold';
+  font-weight: 600;
+}
+
+%flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-sbc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%flex-sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+%flex-ac {
+  display: flex;
+  align-items: center;
+}
+
+%pseudo {
+  content: '';
+  position: absolute;
+  display: block;
+}
+
+%bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
