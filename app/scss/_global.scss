@@ -124,3 +124,13 @@ body {
     }
   }
 }
+
+.fp-is-overflow .fp-overflow.fp-auto-height-responsive,
+.fp-is-overflow .fp-overflow.fp-auto-height,
+.fp-is-overflow>.fp-overflow {
+  width: 100%;
+}
+
+.fp-watermark {
+  display: none;
+}

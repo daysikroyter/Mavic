@@ -43,3 +43,21 @@ $accent: #1C1C1C;
   background-size: cover;
   background-position: center;
 }
+
+%btn {
+  border-radius: 3px;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  color: #FFF;
+  font-family: Ubuntu;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.42px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+
+  &:hover {
+    background-color: #fff;
+    color: $accent;
+  }
+}

@@ -4,16 +4,20 @@
 @import 'libs';
 @import 'global';
 
+// header
+
 .header {
   position: fixed;
-  top: 30px;
+  top: 0px;
   left: 0;
   right: 0;
   z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-height: 70px;
+  @extend %flex-ac;
 }
 
 .menu {
-  min-height: 30px;
   font-weight: 500;
   line-height: 1.13;
   @extend %flex-sbc;
@@ -31,18 +35,8 @@
   }
 
   &__btn {
-    font-weight: 700;
-    letter-spacing: 0.42px;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 3px;
+    @extend %btn;
     padding: 6px 28px;
-    transition: background-color 0.5s ease, color 0.5s ease;
-
-    &:hover {
-      background-color: #fff;
-      color: $accent;
-    }
   }
 
   &__phone {
@@ -51,6 +45,8 @@
     line-height: 1.2;
   }
 }
+
+// section top
 
 .top {
   text-align: center;
@@ -82,6 +78,8 @@
   }
 }
 
+// section about
+
 .about {
 
   &__inner {
@@ -105,6 +103,7 @@
     max-width: 560px;
     margin-right: 50px;
     padding-top: 100px;
+    padding-bottom: 48px;
     position: relative;
   }
 
@@ -138,7 +137,7 @@
       background-color: $accent;
       @extend %flex;
       position: absolute;
-      bottom: -43px;
+      bottom: -42px;
       z-index: 2;
       transition: background-color 0.5s ease;
 
@@ -169,6 +168,8 @@
     object-fit: cover;
   }
 }
+
+// section benefits
 
 .benefits {
 
@@ -272,72 +273,286 @@
   }
 }
 
+// section characteristics
+
 .characteristics {
 
-  &__title {}
+  &__inner {
+    @extend %flex;
+    gap: 20px;
+    padding-top: 22px;
+  }
 
-  &__inner {}
+  &__box {
+    max-width: 280px;
+    position: relative;
 
-  &__item {}
+    &::before {
+      @extend %pseudo;
+      @extend %bg;
+    }
 
-  &__box {}
+    &--dlog {
+      margin-bottom: 140px;
 
-  &__text {}
+      &::before {
+        width: 229px;
+        height: 114px;
+        background-image: url('../images/decor/pointer-1.svg');
+        right: -150px;
+        top: 12px;
+      }
+    }
 
-  &__img {}
-}
+    &--camera::before {
+      width: 346px;
+      height: 81px;
+      background-image: url('../images/decor/pointer-2.svg');
+      left: 230px;
+      top: -66px;
+    }
 
-.questions {
+    &--cmos {
+      margin-bottom: 160px;
 
-  &__title {}
+      &::before {
+        width: 258px;
+        height: 102px;
+        background-image: url('../images/decor/pointer-3.svg');
+        top: 12px;
+        left: -275px;
+      }
+    }
 
-  &__list {}
+    &--video::before {
+      width: 124px;
+      height: 89px;
+      background-image: url('../images/decor/pointer-4.svg');
+      top: -75px;
+      left: -145px;
+    }
+  }
 
-  &__item {}
+  &__title {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.33;
+    margin-bottom: 10px;
+  }
 
-  &__item-title {}
+  &__text {
+    line-height: 1.3;
+  }
 
-  &__text {}
-}
-
-.contacts {
-
-  &__title {}
-
-  &__inner {}
-
-  &__list {}
-
-  &__item {}
-
-  &__name {}
-
-  &__links {}
-
-  &__links-item {}
-
-  &__link {}
-
-  &__box {}
-
-  &__text {}
-
-  &__form {}
-
-  &__input {}
-
-  &__textarea {}
-
-  &__btn {}
-
-  &__social {
-    flex-direction: column;
+  &__img {
+    object-fit: cover;
   }
 }
 
-.footer {
+// section questions
 
-  &__copy {}
+.questions {
+
+  &__list {
+    padding-left: 25px;
+    max-width: 760px;
+  }
+
+  &__item {
+    background-color: rgba(0, 0, 0, 0.30);
+    max-width: 690px;
+    margin-bottom: 5px;
+    position: relative;
+
+    &.questions__item--active {
+      .questions__item-title {
+        cursor: default;
+
+        &::before {
+          transform: rotate(-180deg);
+        }
+      }
+
+      .questions__box {
+        opacity: 1;
+        grid-template-rows: 1fr;
+        padding: 0 5px 75px 50px;
+      }
+    }
+
+    &:nth-child(3)::after {
+      @extend %pseudo;
+      @extend %bg;
+      width: 319px;
+      height: 125px;
+      top: -30px;
+      right: -393px;
+      background-image: url('../images/mavic-decor.png');
+    }
+  }
+
+  &__item-title {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.33;
+    padding: 22px 40px;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      @extend %pseudo;
+      width: 72px;
+      height: 72px;
+      background-color: #fff;
+      right: -72px;
+      top: 0;
+    }
+
+    &::before {
+      @extend %pseudo;
+      @extend %bg;
+      background-size: auto;
+      width: 15px;
+      height: 20px;
+      background-image: url('../images/decor/arrow-down.svg');
+      right: -45px;
+      top: 26px;
+      z-index: 2;
+      transition: transform 0.5s ease;
+    }
+  }
+
+  &__box {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    transition: grid-template-rows 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+  }
+}
+
+// section contacts
+
+.contacts {
+
+  &__inner {
+    @extend %flex-sbc;
+    gap: 20px;
+  }
+
+  &__list {
+    max-width: 240px;
+    line-height: 1.3;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &__name {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  &__links-item:first-child {
+    margin-bottom: 5px;
+  }
+
+  &__links-item:last-child {
+    .contacts__link {
+      position: relative;
+
+      &::before {
+        @extend %pseudo;
+        width: 0;
+        height: 1px;
+        background-color: #fff;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        transition: width 1s ease;
+      }
+
+      &:hover::before {
+        right: auto;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &__box {
+    max-width: 570px;
+    width: 100%;
+  }
+
+  &__text {
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  &__input,
+  &__textarea {
+    background-color: rgba(0, 0, 0, 0.50);
+    padding: 15px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.3;
+
+    &::placeholder {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: rgba(#fff, .4);
+      transition: color 0.5s ease;
+    }
+
+    &:hover::placeholder {
+      color: rgba(#fff, .8);
+    }
+  }
+
+  &__textarea {
+    grid-column: span 2;
+    height: 144px;
+  }
+
+  &__btn {
+    @extend %btn;
+    padding: 10px 15px;
+    width: 130px;
+    margin-top: 10px;
+  }
+
+  &__social {
+    flex-direction: column;
+    margin-right: 167px;
+  }
+}
+
+// footer
+
+.footer {
+  margin-top: -50px;
+  position: relative;
+
+  &__copy {
+    font-size: 13px;
+    line-height: 1.3;
+    color: rgba(#fff, .6);
+    text-align: right;
+  }
 }
 
 @import 'media';
