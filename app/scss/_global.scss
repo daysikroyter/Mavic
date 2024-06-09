@@ -63,6 +63,23 @@ body {
   overflow: hidden;
 }
 
+.logo {
+  border-radius: 3px;
+  transition: opacity 0.5s ease, box-shadow 0.5s ease;
+
+  &:hover {
+    opacity: 0.7; 
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, .7);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
 .title {
   @extend %sf-400;
   font-size: 44px;
@@ -72,7 +89,9 @@ body {
 }
 
 .link {
+  border-radius: 3px;
   position: relative;
+  transition: box-shadow 0.5s ease, opacity 0.5s ease;
 
   &::before {
     @extend %pseudo;
@@ -89,6 +108,14 @@ body {
     width: 100%;
     left: 0;
     right: auto;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.50);
+  }
+
+  &:active {
+    opacity: 0.7;
   }
 }
 

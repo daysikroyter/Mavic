@@ -150,6 +150,22 @@
   .link:hover {
     width: 0;
   }
+
+  .menu__btn:hover,
+  .contacts__btn:hover {
+    color: #fff;
+    background-color: transparent;
+  }
+
+  .logo:hover {
+    opacity: 1;
+  }
+
+  .social__link:hover {
+    path {
+      fill-opacity: .5;
+    }
+  }
 }
 
 @media (max-width: 1024px) {
